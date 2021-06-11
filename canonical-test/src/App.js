@@ -20,18 +20,23 @@ function App() {
 
   return (
     <div className="App">
-      <div className="reposList">
+      <div className="articleList">
         {articles.map((article) => {
           if (article)
             return (
               <div key={article.id}>
-                <ul className="p-list">
-                  <li className="p-list__item">
-                    <h1>CLOUD AND SERVER</h1>
+                <ul className="p-list row">
+                  <li className="p-list__item col-4 p-card--highlighted ">
+                    <h1 className="p-card__title p-text--x-small-capitalised ">
+                      CLOUD AND SERVER
+                    </h1>
+                    <hr />
                     <img src={article.featured_media}></img>
+                    <br />
                     <a href={article.link} target="_blank" rel="noreferrer">
                       {article.title.rendered}
                     </a>
+                    <br />
                     <p>
                       By{" "}
                       <a
@@ -43,7 +48,8 @@ function App() {
                       </a>{" "}
                       on {article.date}
                     </p>
-                    <p>Article</p>
+                    <hr />
+                    <p className="p-text--small">Article</p>
                   </li>
                 </ul>
               </div>
